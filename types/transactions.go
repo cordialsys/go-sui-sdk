@@ -132,9 +132,15 @@ type TransactionBlockKind struct {
 	/// transactions
 	ProgrammableTransaction *SuiProgrammableTransactionBlock `json:"ProgrammableTransaction,omitempty"`
 	// .. more transaction types go here
-	AuthenticatorStateUpdate *json.RawMessage `json:"AuthenticatorStateUpdate,omitempty"`
-	EndOfEpochTransaction    *json.RawMessage `json:"EndOfEpochTransaction,omitempty"`
-	RandomnessStateUpdate    *json.RawMessage `json:"RandomnessStateUpdate,omitempty"`
+	AuthenticatorStateUpdate  *json.RawMessage `json:"AuthenticatorStateUpdate,omitempty"`
+	EndOfEpochTransaction     *json.RawMessage `json:"EndOfEpochTransaction,omitempty"`
+	RandomnessStateUpdate     *json.RawMessage `json:"RandomnessStateUpdate,omitempty"`
+	ConsensusCommitPrologueV4 *json.RawMessage `json:"ConsensusCommitPrologueV4,omitempty"`
+	ConsensusCommitPrologueV5 *json.RawMessage `json:"ConsensusCommitPrologueV5,omitempty"`
+	ConsensusCommitPrologueV6 *json.RawMessage `json:"ConsensusCommitPrologueV6,omitempty"`
+	ConsensusCommitPrologueV7 *json.RawMessage `json:"ConsensusCommitPrologueV7,omitempty"`
+	ConsensusCommitPrologueV8 *json.RawMessage `json:"ConsensusCommitPrologueV8,omitempty"`
+	ConsensusCommitPrologueV9 *json.RawMessage `json:"ConsensusCommitPrologueV9,omitempty"`
 }
 
 func (t TransactionBlockKind) Tag() string {
