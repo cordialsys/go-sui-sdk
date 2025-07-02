@@ -3,8 +3,8 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/sui_types"
+	"github.com/cordialsys/go-sui-sdk/v2/lib"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
 )
 
 type ExecuteTransactionRequestType string

@@ -6,11 +6,10 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/coming-chat/go-sui/v2/sui_types"
-	"github.com/coming-chat/go-sui/v2/types"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
+	"github.com/cordialsys/go-sui-sdk/v2/types"
 	"github.com/shopspring/decimal"
 
-	"github.com/coming-chat/go-sui/v2/account"
 	"github.com/stretchr/testify/require"
 )
 
@@ -58,18 +57,8 @@ func ChainClient(t *testing.T) *Client {
 	}
 }
 
-func M1Account(t *testing.T) *account.Account {
-	a, err := account.NewAccountWithMnemonic(M1Mnemonic)
-	require.NoError(t, err)
-	return a
-}
-
 func M1Address(t *testing.T) *suiAddress {
 	return Address
-}
-
-func Signer(t *testing.T) *account.Account {
-	return M1Account(t)
 }
 
 type SUI float64

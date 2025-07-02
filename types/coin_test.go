@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/coming-chat/go-sui/v2/sui_types"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
 	"github.com/stretchr/testify/require"
 )
 
