@@ -51,7 +51,7 @@ func (c *Client) GetCoins(
 	ctx context.Context,
 	owner suiAddress,
 	coinType *string,
-	cursor *suiObjectID,
+	cursor *string,
 	limit uint,
 ) (*types.CoinPage, error) {
 	var resp types.CoinPage
@@ -63,7 +63,7 @@ func (c *Client) GetCoins(
 func (c *Client) GetAllCoins(
 	ctx context.Context,
 	owner suiAddress,
-	cursor *suiObjectID,
+	cursor *string,
 	limit uint,
 ) (*types.CoinPage, error) {
 	var resp types.CoinPage
@@ -101,7 +101,7 @@ func (c *Client) GetOwnedObjects(
 	ctx context.Context,
 	address suiAddress,
 	query *types.SuiObjectResponseQuery,
-	cursor *types.CheckpointedObjectId,
+	cursor *string,
 	limit *uint,
 ) (*types.ObjectsPage, error) {
 	var resp types.ObjectsPage
@@ -374,14 +374,14 @@ func (c *Client) BatchTransaction(
 
 func (c *Client) QueryTransactionBlocks(
 	ctx context.Context, query types.SuiTransactionBlockResponseQuery,
-	cursor *suiDigest, limit *uint, descendingOrder bool,
+	cursor *string, limit *uint, descendingOrder bool,
 ) (*types.TransactionBlocksPage, error) {
 	resp := types.TransactionBlocksPage{}
 	return &resp, c.CallContext(ctx, &resp, queryTransactionBlocks, query, cursor, limit, descendingOrder)
 }
 
 func (c *Client) QueryEvents(
-	ctx context.Context, query types.EventFilter, cursor *types.EventId, limit *uint,
+	ctx context.Context, query types.EventFilter, cursor *string, limit *uint,
 	descendingOrder bool,
 ) (*types.EventPage, error) {
 	var resp types.EventPage
@@ -398,7 +398,7 @@ func (c *Client) ResolveNameServiceAddress(ctx context.Context, suiName string) 
 }
 
 func (c *Client) ResolveNameServiceNames(ctx context.Context,
-	owner suiAddress, cursor *suiObjectID, limit *uint) (*types.SuiNamePage, error) {
+	owner suiAddress, cursor *string, limit *uint) (*types.SuiNamePage, error) {
 	var resp types.SuiNamePage
 	return &resp, c.CallContext(ctx, &resp, resolveNameServiceNames, owner, cursor, limit)
 }

@@ -192,7 +192,7 @@ func TestClient_GetAllCoins(t *testing.T) {
 	type args struct {
 		ctx     context.Context
 		address suiAddress
-		cursor  *suiObjectID
+		cursor  *string
 		limit   uint
 	}
 	tests := []struct {
@@ -536,7 +536,7 @@ func TestClient_QueryTransactionBlocks(t *testing.T) {
 	type args struct {
 		ctx             context.Context
 		query           types.SuiTransactionBlockResponseQuery
-		cursor          *suiDigest
+		cursor          *string
 		limit           *uint
 		descendingOrder bool
 	}
@@ -615,7 +615,7 @@ func TestClient_QueryEvents(t *testing.T) {
 	type args struct {
 		ctx             context.Context
 		query           types.EventFilter
-		cursor          *types.EventId
+		cursor          *string
 		limit           *uint
 		descendingOrder bool
 	}
