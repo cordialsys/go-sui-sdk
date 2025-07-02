@@ -16,4 +16,4 @@ type DynamicFieldInfo struct {
 	Digest     sui_types.ObjectDigest                  `json:"digest"`
 }
 
-type DynamicFieldPage = Page[DynamicFieldInfo, sui_types.ObjectID]
+type DynamicFieldPage = Page[DynamicFieldInfo, string]

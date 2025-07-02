@@ -338,7 +338,7 @@ type SuiTransactionBlockResponseQuery struct {
 	Options *SuiTransactionBlockResponseOptions `json:"options,omitempty"`
 }
 
-type TransactionBlocksPage = Page[SuiTransactionBlockResponse, sui_types.TransactionDigest]
+type TransactionBlocksPage = Page[SuiTransactionBlockResponse, string]
 
 type DryRunTransactionBlockResponse struct {
 	Effects        lib.TagJson[SuiTransactionBlockEffects] `json:"effects"`

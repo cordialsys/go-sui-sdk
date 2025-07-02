@@ -183,7 +183,7 @@ type CheckpointedObjectId struct {
 	AtCheckpoint *SafeSuiBigInt[CheckpointSequenceNumber] `json:"atCheckpoint"`
 }
 
-type ObjectsPage = Page[SuiObjectResponse, sui_types.ObjectID]
+type ObjectsPage = Page[SuiObjectResponse, string]
 
 // TODO need use Enum
 type SuiObjectDataFilter struct {
