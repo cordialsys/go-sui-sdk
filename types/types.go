@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/sui_types"
 	"strings"
+
+	"github.com/cordialsys/go-sui-sdk/v2/lib"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
 )
 
 const (

@@ -4,9 +4,7 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 
-	"github.com/coming-chat/go-aptos/crypto/derivation"
-	"github.com/coming-chat/go-sui/v2/sui_types"
-	"github.com/tyler-smith/go-bip39"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
 	"golang.org/x/crypto/blake2b"
 )
 
@@ -42,26 +40,6 @@ func NewAccountWithKeystore(keystore string) (*Account, error) {
 		return nil, err
 	}
 	return NewAccount(scheme, ksByte[1:]), nil
-}
-
-func NewAccountWithMnemonic(mnemonic string) (*Account, error) {
-	return NewAccountWithMnemonicAndPassword(mnemonic, "")
-}
-
-func NewAccountWithMnemonicAndPassword(mnemonic string, password string) (*Account, error) {
-	seed, err := bip39.NewSeedWithErrorChecking(mnemonic, password)
-	if err != nil {
-		return nil, err
-	}
-	key, err := derivation.DeriveForPath("m/44'/784'/0'/0'/0'", seed)
-	if err != nil {
-		return nil, err
-	}
-	scheme, err := sui_types.NewSignatureScheme(0)
-	if err != nil {
-		return nil, err
-	}
-	return NewAccount(scheme, key.Key), nil
 }
 
 func (a *Account) Sign(data []byte) []byte {

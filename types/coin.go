@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/coming-chat/go-sui/v2/sui_types"
+	"github.com/cordialsys/go-sui-sdk/v2/sui_types"
 )
 
 const SUI_COIN_TYPE = "0x2::sui::SUI"

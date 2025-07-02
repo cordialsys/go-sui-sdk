@@ -4,8 +4,9 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
-	"github.com/btcsuite/btcutil/base58"
 	"strings"
+
+	"github.com/btcsuite/btcd/btcutil/base58"
 )
 
 type BytesData interface {

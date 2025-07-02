@@ -1,26 +1,19 @@
 # go-sui-sdk
-Sui Golang SDK
 
-[![Documentation (master)](https://img.shields.io/badge/docs-master-59f)](https://github.com/coming-chat/go-sui-sdk)
-[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/coming-chat/go-sui-sdk/blob/main/LICENSE)
-
-The Sui Golang SDK for ComingChat. 
-We welcome other developers to participate in the development and testing of sui-sdk.
+Sui Golang SDK. This is maintained by Cordial Systems. It was forked from [ComingChat](https://github.com/coming-chat/go-sui-sdk).
 
 ## Install
 
 ```sh
-go get github.com/coming-chat/go-sui/v2
+go get github.com/cordialsys/go-sui-sdk/v2
 ```
-
-
 
 ## Usage
 
 ### Account
 
 ```go
-import "github.com/coming-chat/go-sui/account"
+import "github.com/cordialsys/go-sui/account"
 
 // Import account with mnemonic
 acc, err := account.NewAccountWithMnemonic(mnemonic)
@@ -38,15 +31,13 @@ fmt.Printf("   address = %v\n", acc.Address)
 signedData := acc.Sign(data)
 ```
 
-
-
 ### JSON RPC Client
 
 All data interactions on the Sui chain are implemented through the rpc client.
 
 ```go
-import "github.com/coming-chat/go-sui/client"
-import "github.com/coming-chat/go-sui/types"
+import "github.com/cordialsys/go-sui/client"
+import "github.com/cordialsys/go-sui/types"
 
 cli, err := client.Dial(rpcUrl)
 
@@ -69,16 +60,14 @@ print("transaction timestamp = ", resp.TimestampMs)
 
 ```
 
-We currently have some rpc methods built-in, [see here](https://github.com/coming-chat/go-sui-sdk/blob/main/client/client_call.go)
-
-
+We currently have some rpc methods built-in, [see here](https://github.com/cordialsys/go-sui-sdk/blob/main/client/client_call.go)
 
 ### Build Transaction & Sign ( Transfer Sui )
 
 ```go
-import "github.com/coming-chat/go-sui/client"
-import "github.com/coming-chat/go-sui/types"
-import "github.com/coming-chat/go-sui/account"
+import "github.com/cordialsys/go-sui/client"
+import "github.com/cordialsys/go-sui/types"
+import "github.com/cordialsys/go-sui/account"
 
 acc, err := account.NewAccountWithMnemonic(mnemonic)
 signer, _ := types.NewAddressFromHex(acc.Address)
@@ -96,8 +85,6 @@ signedTxn := txnBytes.SignWith(acc.PrivateKey)
 
 ```
 
-
-
 ### Send Signed Transaction
 
 ```go
@@ -107,4 +94,3 @@ print("transaction digest = ", txnResponse.Certificate.TransactionDigest)
 print("transaction status = ", txnResponse.Effects.Status)
 print("transaction gasFee = ", txnResponse.Effects.GasFee())
 ```
-

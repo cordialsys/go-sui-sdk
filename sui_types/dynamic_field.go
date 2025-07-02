@@ -1,6 +1,6 @@
 package sui_types
 
-import "github.com/coming-chat/go-sui/v2/lib"
+import "github.com/cordialsys/go-sui-sdk/v2/lib"
 
 type DynamicFieldType struct {
 	DynamicField  *lib.EmptyEnum `json:"DynamicField"`
